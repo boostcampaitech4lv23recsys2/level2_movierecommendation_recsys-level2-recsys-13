@@ -1,0 +1,32 @@
+# dataset config : General Recommendation
+USER_ID_FIELD: user
+ITEM_ID_FIELD: item
+load_col:
+  inter: [user, item]
+
+field_separator: "\t"
+data_path: /opt/ml/input/base/data
+dataset: recbole
+
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 1
+  alpha: 1.0
+  dynamic: False
+  candidate_num: 0
+
+eval_args:
+  split: { "RS": [9, 0.5, 0.5] }
+  group_by: user
+  order: RO
+  mode: full
+
+seed: 42
+checkpoint_dir: "/opt/ml/input/base/saved/"
+train_batch_size: 512
+eval_batch_size: 512
+epochs: 30
+metrics: ["Recall", "MRR", "NDCG", "Hit", "Precision"]
+topk: 10
+valid_metric: Recall@10
+metric_decimal_place: 4
