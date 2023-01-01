@@ -27,7 +27,7 @@ import argparse
 
 def main():
     parser = argparse.ArgumentParser()
-    BASE = './input/base/'
+    BASE = '/opt/ml/input/base/'
     parser.add_argument(
         "--data_dir", default="/opt/ml/input/data/train/", type=str)
     parser.add_argument("--output_dir", default=BASE+"output/", type=str)
@@ -41,7 +41,7 @@ def main():
     parser.add_argument(
         "--world_size", type=int, default=-1, help="total number of jobs"
     )
-    parser.add_argument("--config_files", default="./input/base/data/recbole.yaml",
+    parser.add_argument("--config_files", default="/opt/ml/input/base/data/recbole.yaml",
                         type=str, help="config files")
     args = parser.parse_args()
 
