@@ -46,4 +46,19 @@ def convert_to_atomic(df: pd.DataFrame) -> pd.DataFrame:
 def save_atomic(args, df: pd.DataFrame, name: str, dtype: str):
     df.to_csv(args.atomic_dir + name + "." + dtype, index=False, sep='\t')
 
+
+def make_sequential_atomic(args):
+    if os.path.exists(args.atomic_dir + 'sequential.inter'):
+        return
+    
+    df = pd.read_csv(args.data_dir + 'train_ratings.csv')
+    df['user'] = df['user'].astype(str)
+    df['item'] = df['item'].astype(str)
+    df['time'] = df['time'].astype(str)
+    
+    df = df.rename(columns={'user': 'user:token', 'item': 'item:token', 'time': 'time:float'})
+    
+    df.to_csv(args.atomic_dir + args.dataset + ".inter", index=False, sep='\t')
+    
+
 # model

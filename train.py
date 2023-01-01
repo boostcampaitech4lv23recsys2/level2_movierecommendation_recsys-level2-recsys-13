@@ -5,7 +5,7 @@ import numpy as np
 import sys
 
 from utils import util
-from data_loader import dataloader
+# from data_loader import dataloader
 
 from tqdm import tqdm
 from logging import getLogger
@@ -53,6 +53,7 @@ def main():
 
     # convert df to atomic files & save to path
     util.make_atomic(args, df)
+    util.make_sequential_atomic(args)
 
     config_file_list = (
         args.config_files.strip().split(" ") if args.config_files else None
