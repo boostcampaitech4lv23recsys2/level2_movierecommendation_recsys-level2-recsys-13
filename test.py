@@ -11,12 +11,12 @@ def main():
     parser.add_argument(
         "--saved_dir", default='/opt/ml/input/base/saved/', type=str)
     parser.add_argument(
-        "--checkpoint", default='GRU4Rec-Jan-01-2023_21-41-12.pth', type=str)
+        "--checkpoint", default='GRU4Rec-Jan-01-2023_21-41-12', type=str)
     parser.add_argument("--topk", default=10, type=int)
     args = parser.parse_args()
 
     config, model, dataset, train_data, valid_data, test_data = load_data_and_model(
-        model_file=args.saved_dir + args.checkpoint,
+        model_file=args.saved_dir + args.checkpoint + '.pth',
     )
 
     external_user_ids = dataset.id2token(dataset.uid_field, list(range(dataset.user_num)))[1:]
@@ -35,7 +35,7 @@ def main():
     # to csv
     pd.DataFrame({'user': user_list, 'item': topk_items})\
         .explode('item')\
-        .to_csv('output/' + config.model + '.csv', index=False)
+        .to_csv('output/' + args.checkpoint + '.csv', index=False)
 
 
 if __name__ == "__main__":
