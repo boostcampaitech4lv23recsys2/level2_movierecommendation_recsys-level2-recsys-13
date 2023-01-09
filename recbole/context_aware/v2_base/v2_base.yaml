@@ -1,0 +1,43 @@
+
+
+data_path: /opt/ml/input/data/
+dataset: v2_base
+field_separator: "\t"
+seq_separator: "\t"
+USER_ID_FIELD: user
+ITEM_ID_FIELD: item
+# TIME_FIELD: time
+load_col:
+  inter: [user, item]
+#   item: [item, director]
+#   item: [item, year, title, genre, writer, director]
+
+# model config
+reg_weight: 550
+embedding_size: 10 # (int) The embedding size of features.
+mlp_hidden_size: [64, 32, 16] # (list of int) The hidden size of MLP layers.
+dropout_prob: 0.2 # (float) The dropout rate.
+
+# Training and evaluation config
+eval_setting: RO_RS, full
+epochs: 100
+seed: 42
+train_batch_size: 512
+eval_batch_size: 512
+eval_args:
+  split: { "RS": [0.96, 0.02, 0.02] }
+  order: RO
+  group_by: "user"
+  mode: full
+topk: 10
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 1
+  alpha: 1.0
+  dynamic: False
+  candidate_num: 0
+metrics: ["Recall", "MRR", "NDCG", "Hit", "Precision"]
+valid_metric: Recall@10
+
+# logging
+show_progress: true
