@@ -21,6 +21,7 @@
 - 성능 개선 실험
   - 결측치 제거 후 0.082->0.081
   - feature 추가/제거 실험
+    - 기존 feature(year, title, director, writer, genre) 변화에 따른 성능 비교
     - 새로운 feature를 생성해 실험(ratings, popularity)
 - 모델
   - General model : EASE, ADMMSLIM, RecVAE, NCEPLRec
