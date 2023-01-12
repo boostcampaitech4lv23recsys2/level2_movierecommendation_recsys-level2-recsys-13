@@ -14,7 +14,7 @@
 - train_ratings : 31,360명의 사용자(user)가 6,807개의 영화(item)를 시청한 데이터
 
 ## Process
-- **EDA**
+- **[EDA](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/EDA)**
   - 사용자의 시청기록 분석
   - 사용자가 시청한 영화 장르에 따른 clustering
   - 이상치 제거
@@ -23,7 +23,7 @@
   - feature 추가/제거 실험
     - 기존 feature(year, title, director, writer, genre) 변화에 따른 성능 비교
     - 새로운 feature를 생성해 실험(ratings, popularity)
-- **모델**
+- **[모델](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/models)**
   - General model : EASE, ADMMSLIM, RecVAE, NCEPLRec
   - Context-aware model : xDeepFM, FM, FFM
   - Sequential model : S3Rec, SASRec
