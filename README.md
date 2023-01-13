@@ -19,11 +19,9 @@ Check out Wrap Up Report at [Link](https://github.com/boostcampaitech4lv23recsys
   - user의 시청기록 분석
   - 이상치 제거
   - user가 시청한 영화 장르에 따른 clustering
-- **[성능 개선 실험](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/feature%20engineering)**
-  - 결측치 제거 후 0.082->0.081
-  - feature 추가/제거 실험
-    - 기존 feature(year, title, director, writer, genre) 변화에 따른 성능 비교
-    - 새로운 feature를 생성해 실험(ratings, popularity)
+- **[Feature Engineering](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/feature%20engineering)**
+  - 추가한 feature
+  - 각 feature 추가/제거 실험
 - **[모델](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/models)**
   - General model : EASE, ADMMSLIM, RecVAE, NCEPLRec
   - Context-aware model : xDeepFM, FM, FFM
