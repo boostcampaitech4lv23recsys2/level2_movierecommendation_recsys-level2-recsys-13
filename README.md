@@ -16,9 +16,9 @@ Check out Wrap Up Report at [Link](https://github.com/boostcampaitech4lv23recsys
 
 ## Process
 - **[EDA](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/EDA)**
-  - 사용자의 시청기록 분석
-  - 사용자가 시청한 영화 장르에 따른 clustering
+  - user의 시청기록 분석
   - 이상치 제거
+  - user가 시청한 영화 장르에 따른 clustering
 - **[성능 개선 실험](https://github.com/boostcampaitech4lv23recsys2/level2_movierecommendation_recsys-level2-recsys-13/tree/main/feature%20engineering)**
   - 결측치 제거 후 0.082->0.081
   - feature 추가/제거 실험
